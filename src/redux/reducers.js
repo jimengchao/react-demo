@@ -5,5 +5,16 @@ import userInfo from './reducers/userInfo'
 
 export default combineReducers({
     counter,
-    userInfo
+    userInfo,
+    global(state = {}, action ){
+        if(action.type == 'a'){
+            return {
+                a: 2
+            }
+        }
+
+        return {
+            a: 0
+        }
+    }
 });
