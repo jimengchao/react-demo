@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 import Home from 'bundle-loader?lazy&name=index!@/pages/index'
 import Page1 from 'bundle-loader?lazy&name=page1!@/pages/page1'
@@ -20,10 +21,19 @@ const createComponent = (component) => (props) => {
     )
 }
 
-function getRouter () {
+function getRouter (props) {
+
+    function handlClick(){
+        props.dispatch({
+            type: 'a'
+        })
+    }
+
+    console.log(props);
     return  <BrowserRouter>
             <div>
                 <ul>
+                    <li onClick={handlClick}>{props.a}</li>
                     <li><Link to="/">首页1</Link></li>
                     <li><Link to="/page1">Page1</Link></li>
                     <li><Link to="/counter">counter</Link></li>
@@ -39,5 +49,8 @@ function getRouter () {
         </BrowserRouter>
 } 
 
+const mapStateToProps = (state) => {
+    return state.global
+};
 
-export default getRouter
+export default connect(mapStateToProps)(getRouter);
