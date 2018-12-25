@@ -3,6 +3,6 @@ export default (next) => (action) => {
     try {
       next(action);
     } catch (err) {
-      console.error('错误报告: ', err)
+      console.error('错误报告222222222: ', err)
     } 
 }
