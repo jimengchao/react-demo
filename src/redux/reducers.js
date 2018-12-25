@@ -9,7 +9,7 @@ export default combineReducers({
     global(state = {}, action ){
         if(action.type == 'a'){
             return {
-                a: 2
+                a: 2222
             }
         }
 
