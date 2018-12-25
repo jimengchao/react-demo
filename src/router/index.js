@@ -34,7 +34,7 @@ function getRouter (props) {
             <div>
                 <ul>
                     <li onClick={handlClick}>{props.a}</li>
-                    <li><Link to="/">首页1</Link></li>
+                    <li><Link to="/">首页1222</Link></li>
                     <li><Link to="/page1">Page1</Link></li>
                     <li><Link to="/counter">counter</Link></li>
                     <li><Link to="/userinfo">UserInfo</Link></li>
